@@ -1,0 +1,41 @@
+/* Style pour le conteneur du menu de navigation */
+
+
+#navigation  {
+    display: none;
+    width: 100%;
+    padding: 0 2%; /* Marge intérieure */
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+}
+
+
+/* Style pour la liste du menu */
+#primary-menu {
+    display: flex;
+    justify-content: end;
+}
+
+
+
+
+#primary-menu li a {
+    text-decoration: none;
+    font-size: 14px;
+    color: #000; /* Couleur du texte */
+    margin-right: 40px;
+}
+
+#primary-menu li a:hover {
+    text-decoration: underline;
+}
+
+/* Masquer les points devant chaque mot */
+#primary-menu li {
+    list-style-type:none
+}
+
+

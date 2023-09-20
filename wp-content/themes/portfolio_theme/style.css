@@ -1,0 +1,700 @@
+/*
+Theme Name: PortFolio Domi Theme
+Theme URI: https://www.cookinfamily.fr
+Author: Dom Dom
+Author URI: https://openclassrooms.com
+Description: Thème Portfolio du cours OpenClassrooms
+Version: 1.0
+Tags: OpenClassrooms, Motaphoto, Cours
+Text Domain: portfolio_domi_theme
+
+*/
+/*polices*/
+@font-face {
+    font-family: 'space_mono_normal';
+    src: url('fonts/SpaceMono-Regular.ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'space_mono_italic_400';
+    src: url('fonts/SpaceMono-Italic.ttf');
+    /* Chemin relatif au dossier du thème */
+    font-weight: 400;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'space_mono_italic_700';
+    src: url('fonts/SpaceMono-BoldItalic.ttf');
+    /* Chemin relatif au dossier du thème */
+    font-weight: 700;
+    font-style: italic;
+}
+
+
+@font-face {
+    font-family: 'space_mono_bold';
+    src: url('fonts/SpaceMono-Bold.ttf');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'poppins_light';
+    src: url('fonts/Poppins-Light.ttf');
+    font-weight: 300;
+    font-style: normal;
+}
+
+/* Centrer horizontalement en utilisant margin: auto; */
+body {
+    margin: 0;
+}
+
+
+#primary {
+    margin-top: 1%;
+    margin-left: 14%;
+    width: 70%;
+    /* Ajustez la largeur du conteneur selon vos besoins */
+
+}
+
+.custom-single-photos-page #primary {
+    margin-top: 0;
+    /* Supprimez la marge supérieure pour la page de contact */
+
+}
+
+h1 {
+    font-family: 'space_mono_italic_700', sans-serif;
+    margin-bottom: 0px;
+}
+
+h2 {
+    font-family: 'space_mono_italic_400', sans-serif;
+}
+
+h3 {
+    font-family: 'space_mono_normal', sans-serif;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+.description_photo {
+    font-family: 'space_mono_normal', sans-serif;
+}
+
+button {
+    background-color: #D8D8D8;
+    width: 20%;
+    height: 50px;
+    margin-top: 1%;
+    margin-bottom: 1%;
+}
+
+#load-more :hover,
+button:hover {
+    background-color: rgb(237, 242, 242);
+}
+
+/* Style pour la section du header */
+.header-container {
+    position: relative;
+    height: 300px;
+    overflow: hidden;
+}
+
+.main-photo {
+    position: absolute;
+    z-index: -1;
+    idth: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.header-title-image {
+    position: absolute;
+    z-index: 1;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 70%;
+    max-width: 1000px;
+    text-align: center;
+}
+
+
+/*miniature au survol*/
+.thumbnail-preview {
+    position: relative;
+    text-decoration: none;
+    /* Supprime la décoration de texte par défaut (le trait) */
+    font-size: 3vw;
+}
+
+.thumbnail-preview img {
+    position: relative;
+    right: 20%;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s, opacity 0.3s ease;
+}
+
+.thumbnail-preview:hover img {
+    visibility: visible;
+    opacity: 1;
+}
+
+
+/* container photo catalog en grid*/
+
+#catalog {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    /* Trois colonnes */
+    grid-auto-rows: minmax(100px, auto);
+    /* Hauteur automatique avec une hauteur minimale de 100px */
+    grid-auto-flow: dense;
+    /* Activation du mode dense pour le masonry */
+    gap: 20px;
+    /* Espacement entre les éléments */
+    filter: grayscale(100%);
+}
+
+
+/*filtres*/
+
+.filtres {
+    display: grid;
+    grid-template-columns: 1fr 1fr 2fr 1fr;
+    margin: 0 0% 3% 1%;
+    width: 80%;
+}
+
+.filter-range {
+    margin-right: 20%;
+    height: 150%;
+    background-color: white;
+}
+
+#load-more {
+    text-align: center;
+    height: 150%;
+}
+
+.related-thumbnail {
+    position: relative;
+    display: inline-block;
+    border: 0px solid #e9e7e7;
+    padding: 10px;
+
+}
+
+.eye-icon {
+    position: absolute;
+    top: 50%;
+    left: 60%;
+    transform: translate(-50%, -50%);
+    font-size: 80px;
+    opacity: 0;
+    /* Masquer l'icône au départ */
+    transition: opacity 0.3s ease;
+}
+
+.related-thumbnail:hover .eye-icon {
+    opacity: 1;
+    /* Afficher l'icône au survol */
+
+
+}
+
+.liens {
+    text-decoration: none;
+    /* Supprimer le soulignement du lien */
+    color: white;
+}
+
+.titre_categorie {
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    position: absolute;
+    bottom: 0;
+    opacity: 0;
+}
+
+
+
+.related-thumbnail img {
+    width: 100%;
+    /* 50% de la largeur du viewport */
+    height: 100%;
+    /* 50% de la hauteur du viewport */
+    object-fit: cover;
+
+    border-radius: 20px;
+    background-color: #17d576;
+    text-align: center;
+
+
+}
+
+.related-thumbnail:hover .titre_categorie {
+    opacity: 1;
+    /* Afficher l'icône au survol */
+    z-index: 100;
+}
+
+span.categorie1 p {
+    margin-top: 0px;
+}
+
+span.titre1,
+.categorie1 {
+    margin-left: 5%;
+    margin-right: 5%;
+    color: white;
+}
+
+#image_native {
+    width: 50%;
+}
+
+article {
+    /*text-transform: uppercase;*/
+    margin: 0;
+   color: white;
+   
+    
+}
+
+.photo-container img {
+    width: 90%;
+    height: auto;
+    margin: 0 auto;
+    /* Centre l'image horizontalement */
+}
+
+.photo-container {
+    width: 50%;
+}
+
+.entry-content {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2%;
+}
+
+.format_single {
+    font-family: 'space_mono_normal';
+    align-self: flex-end;
+
+}
+
+.entry-header {
+    font-size: 3vw;
+}
+
+.pied_image {
+    display: flex;
+    justify-content: space-between;
+    border-top: solid 1px rgb(248, 245, 245);
+    width: 90%;
+}
+
+.texte_img {
+    text-transform: capitalize;
+    font-family: 'poppins_light';
+    align-self: center;
+}
+
+.open-popup {
+    align-self: center;
+}
+
+.hidden-photo {
+    display: none;
+}
+
+.related-photos ul.liens_apparentes {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+}
+
+.load-more-photos1 {
+    text-align: center;
+}
+
+/* Ajoute un trait noir au-dessus des liens */
+.footer-separator {
+    width: 100%;
+    height: 2px;
+    background-color: black;
+}
+
+/* Met en majuscules et espace autour */
+.footer-links {
+    display: flex;
+    justify-content: space-around;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 14px;
+    align-items: center;
+}
+
+.footer-link {
+    margin: 0 10px;
+}
+
+footer,
+label{
+    color: black;
+}
+.visible-photo {
+    flex-wrap: wrap;
+}
+
+
+.screen-icon {
+    position: absolute;
+    left: 95%;
+    font-size: 60px;
+    cursor: pointer;
+    color: #ffffff;
+    z-index: 10;
+    font-weight: 900;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.related-thumbnail:hover .screen-icon {
+    opacity: 1;
+
+    /* Afficher l'icône au survol */
+}
+
+.menu-toggle {
+    display: none;
+}
+
+
+/*--------------------------------------------------------------*/
+
+@media screen and (max-width: 800px) {
+
+    /* Cacherle menu par défaut sur les écrans plus petits */
+    #primary-menu {
+        display: none;
+    }
+
+    .header-container {
+        position: relative;
+        height: 500px;
+    }
+
+    /* Styles pour le bouton du menu hamburger */
+    .menu-toggle {
+        display: block;
+        /* Affiche le bouton sur tous les écrans */
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 10px;
+        font-size: 24px;
+    }
+
+    .menu-icon::before {
+        content: '\2630';
+        font-family: sans-serif;
+    }
+
+    /* Affiche le menu lorsque le bouton est cliqué */
+    .menu-open #primary-menu {
+        display: block;
+    }
+
+    /* Styles pour le menu ouvert */
+    .menu-open #primary-menu {
+        display: block;
+
+    }
+
+    #navigation {
+        justify-content: center;
+    }
+
+
+
+
+
+
+    .filtres {
+        display: flex;
+        margin: 0 0% 3% 20%;
+        justify-content: center;
+    }
+
+    .filter-range {
+        margin-right: 10%;
+    }
+
+    .eye-icon {
+        position: relative;
+        font-size: 40px;
+        top: 20vh;
+        left: 15vh;
+        width: 15%;
+    }
+
+    .screen-icon {
+        font-size: 40px;
+        left: 4%;
+        background-color: rgba(0, 0, 0, 0.2);
+        /* Couleur de fond noire avec opacité */
+    }
+
+    .titre_categorie {
+        width: 70%;
+        margin-bottom: 5%;
+    }
+
+    .pied_image {
+        display: grid;
+    }
+
+    .photo-container img {
+        width: 200%;
+    }
+
+    .pagination-container {
+        display: none;
+    }
+
+    .modal-content {
+        width: 80%;
+        right: 25%;
+        position: relative;
+    }
+
+    .open-popup,
+    .modal {
+        width: 100%;
+    }
+
+    .entry-content {
+        flex-direction: column-reverse;
+    }
+
+    .format_single {
+        align-self: auto;
+    }
+
+    .pagination-label {
+        display: none;
+    }
+
+    .pied_image {
+        justify-content: center;
+        padding: 5%;
+    }
+
+    #load-more-related-photos {
+        width: 60%;
+    }
+
+    #load-more-button {
+        width: 50%
+    }
+
+
+
+    .footer-links {
+        flex-direction: column;
+        font-family: "space_mono_normal";
+    }
+
+    .footer-link {
+        margin: 3%;
+        font-size: large;
+    }
+
+    a {
+        text-decoration: none;
+        color: black;
+    }
+
+    .all-rights-reserved {
+        margin-top: 0;
+    }
+
+    h2 {
+        text-align: center;
+    }
+}
+
+/*effet parallax header*/
+
+/* Styles de base pour le header */
+
+main,
+.header-container {
+    color: hsl(324, 70%, 45%);
+    animation: wheelHueColor 30s infinite;
+    background-color: currentColor;
+}
+
+@supports (background-blend-mode: overlay) {
+
+    main,
+    .header-container {
+        background-image: linear-gradient(45deg, white 10%, black 90%);
+        background-blend-mode: overlay;
+    }
+}
+
+/* @keyframes wheelHueColor {
+
+    from,
+    to {
+        color: hsl(324, 70%, 45%);
+    }
+
+    10% {
+        color: hsl(360, 65%, 45%);
+    }
+
+    20% {
+        color: hsl(36, 80%, 45%);
+    }
+
+    30% {
+        color: hsl(72, 75%, 35%);
+    }
+
+    40% {
+        color: hsl(108, 65%, 35%);
+    }
+
+    50% {
+        color: hsl(144, 75%, 35%);
+    }
+
+    60% {
+        color: hsl(180, 75%, 35%);
+    }
+
+    70% {
+        color: hsl(216, 60%, 45%);
+    }
+
+    80% {
+        color: hsl(252, 65%, 50%);
+    }
+
+    90% {
+        color: hsl(288, 60%, 40%);
+    }
+}
+*/
+
+main,
+.header-container {
+    min-height: 0vh;
+    /*display: flex;*/
+}
+
+@keyframes wheelHueColor {
+    from, to {
+        color: hsl(0, 0%, 0%); /* Noir anthracite */
+    }
+    
+    10% {
+        color: hsl(0, 0%, 10%); /* Gris anthracite */
+    }
+
+    20% {
+        color: hsl(0, 0%, 20%); /* Gris foncé */
+    }
+
+    30% {
+        color: hsl(0, 0%, 30%); /* Gris moyen */
+    }
+
+    40% {
+        color: hsl(0, 0%, 40%); /* Gris clair */
+    }
+
+    50% {
+        color: hsl(0, 0%, 50%); /* Gris très clair */
+    }
+
+    60% {
+        color: hsl(0, 0%, 40%); /* Gris clair */
+    }
+
+    70% {
+        color: hsl(0, 0%, 30%); /* Gris moyen */
+    }
+
+    80% {
+        color: hsl(0, 0%, 20%); /* Gris foncé */
+    }
+
+    90% {
+        color: hsl(0, 0%, 10%); /* Gris anthracite */
+    }
+}
+
+
+.single {
+   width: 90% !important;
+   color: white;
+   display: block;
+   padding-top: 1%;
+   padding-bottom: 1%;
+   margin-left: 4% !important;
+   text-transform: capitalize;
+   font-family: 'space_mono_italic_400', sans-serif;
+   
+}
+
+.primary-one {
+
+    margin-left: 4% !important;
+    width: 100% !important;
+    margin-top: 1% !important;
+    
+}
+
+.photo-container-one {
+    padding-top: 5%;
+    padding-right:3%;
+}
+
+.pagination-label-one {
+    color: white;
+}
+
+
+.photo-container-one img {
+    border-radius: 20px;
+}
+
+.thumbnail-preview-one img {
+    visibility: visible ;
+    opacity: 0.3 ;
+    margin-top: 3%
+}

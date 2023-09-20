@@ -1,0 +1,46 @@
+/* Styles pour la modale */
+
+/* La classe 'modal' est utilisée pour styliser la modale */
+.modal {
+    display: none; /* Par défaut, la modale est cachée */
+    position: fixed; /* Position fixe pour la modale */
+    left: 25%;
+    width: 50%;
+    height: 100%;
+    z-index: 1001; /* Couche d'affichage élevée pour être au-dessus du contenu */
+}
+
+/* Styles pour le contenu de la modale */
+.modal-content {
+    background-color: #fff; /* Fond blanc pour le contenu */
+    margin: 1% auto; /* Marge autour du contenu pour le centrer */
+    padding: 20px;
+    border: 5px solid #010000; /* Bordure autour du contenu */
+    width: 60%; /* Largeur du contenu de la modale */
+}
+
+/* Styles pour le bouton de fermeture */
+.close {
+    color: #888; /* Couleur du texte */
+    float: right; /* Alignement à droite du bouton */
+    font-size: 28px; /* Taille de police */
+    font-weight: bold; /* Texte en gras */
+    cursor: pointer; /* Curseur de la souris en forme de main */
+}
+
+/* Styles au survol du bouton de fermeture */
+.close:hover {
+    color: #000; /* Changement de couleur du texte au survol */
+}
+
+/* Styles pour le bouton "show-modal" dans le menu */
+#show-modal {
+    position: absolute; /* Position absolue pour le placer correctement */
+    z-index: 1000; /* Couche d'affichage élevée pour être au-dessus du contenu */
+}
+
+#contact-titre {
+    font-size: xx-large;
+    font-style: italic;
+    text-align: center;
+}
