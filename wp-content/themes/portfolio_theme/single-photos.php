@@ -130,8 +130,6 @@ template Post Type: post, page, product
 <?php wp_footer(); ?> <!-- Inclut le script du footer -->
 
 
-
-<!-- Script jQuery pour ouvrir la modale et préremplir le champ "RÉF. PHOTO" -->
 <!-- Script jQuery pour ouvrir la modale et préremplir le champ "RÉF. PHOTO" -->
 <script>
     jQuery(document).ready(function (jQuery) {

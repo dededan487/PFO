@@ -20,8 +20,8 @@ get_header();
         <div class="filtres">
             <!-- Div contenant les filtres pour la sélection des photos. -->
 
-           
-           
+
+
 
             <!-- Champ de sélection pour l'ordre de tri -->
             <select id="order-filter" class="filter-range">
@@ -62,28 +62,28 @@ get_header();
                     ?>
                     <div class="related-thumbnail image-galerie">
                         <!-- Div pour chaque photo affichée. -->
-                        <h3 class="titre_categorie">
+                        <div class="titre_categorie">
                             <!-- Titre de la catégorie -->
                             <span class="titre1">
                                 <?php the_title(); ?>
                             </span> <!-- Affiche le titre de l'article -->
 
                             <span class="titre1">
-                            <?php echo esc_attr(strip_tags(get_field('titre'))); ?>
+                                <?php echo esc_attr(strip_tags(get_field('titre'))); ?>
                             </span> <!-- Affiche le titre du projet -->
-                            
-                        </h3>
 
-                        <!--<div class="eye-icon">
-                            <a href="<?php the_permalink(); ?>" class="liens">&#128065;</a>
-                             Lien vers la page de la photo (icône d'œil) 
                         </div>
+                        <div class="icon-class">
+                            <div class="eye-icon">
+                                <a href="<?php the_permalink(); ?>" class="liens">INFO</a>
+                                <!-- Lien vers la page de la photo (icône d'œil) -->
+                            </div>
 
-                        <span class="screen-icon liens" data-fancybox="gallery"
-                            data-src="<?php echo esc_url(wp_get_attachment_url(get_post_thumbnail_id())); ?>"> &#128437;
-                        </span>
-                        Lien pour afficher la photo en grand dans une lightbox. -->
-
+                            <div class="screen-icon liens" data-fancybox="gallery"
+                                data-src="<?php echo esc_url(wp_get_attachment_url(get_post_thumbnail_id())); ?>">DIAPOS
+                            </div>
+                            <!-- Lien pour afficher la photo en grand dans une lightbox. -->
+                        </div>
                         <?php the_post_thumbnail('full'); ?>
                         <!-- Afficher la photo en miniature. -->
                     </div>

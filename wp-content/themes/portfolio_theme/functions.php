@@ -118,7 +118,7 @@ function load_more_photos()
     endwhile;
     wp_reset_postdata();
   else:
-    echo 'Plus de photos.'; // Aucune photo trouvée
+    echo '<p id="more-photos-text">Plus de photos </p>'; // Aucune photo trouvée
   endif;
 
   die(); // Termine l'exécution du script
@@ -266,7 +266,6 @@ function custom_template_for_custom_post_type($template) {
   return $template;
 }
 add_filter('template_include', 'custom_template_for_custom_post_type');
-
 
 
 

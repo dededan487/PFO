@@ -5,3 +5,7 @@ jQuery(document).ready(function($) {
         jQuery('body').toggleClass('menu-open'); // Ajoute ou supprime la classe "menu-open" du corps de la page
     });
 });
+
+
+
+
