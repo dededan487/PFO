@@ -8,8 +8,6 @@ template Post Type: post, page, product
 <?php get_header(); ?>
 <!-- Inclut l'en-tête du site -->
 
-
-
 <main id="main" class="site-main single-main-1" role="main">
     <div id="primary" class="content-area primary-one">
 
@@ -46,17 +44,16 @@ template Post Type: post, page, product
                             echo '</ul>'; // Termine la liste non ordonnée
                         }
                         ?>
-                        <p><strong>Contexte :</strong>
-                            <?php echo get_field('contexte'); ?> <!-- Affiche le champ "type" du CPT -->
-                        </p>
-
                         <p><strong>Code sur GitHub :</strong>
-                            <?php echo get_field('code_github'); ?> <!-- Affiche le champ "type" du CPT -->
+                            <a href="<?php echo esc_url(get_field('code_github')); ?>" target="_blank">Voir sur GitHub</a>
                         </p>
 
                         <p><strong>Aller voir le site :</strong>
-                            <?php echo get_field('adresse_du_site'); ?> <!-- Affiche le champ "type" du CPT -->
+                            <a href="<?php echo esc_url(get_field('adresse_du_site')); ?>" target="_blank">Visiter le
+                                site</a>
                         </p>
+
+
 
                         <p><strong>Date :</strong>
                             <?php echo get_field('annee'); ?> <!-- Affiche le champ "annee" du CPT -->
@@ -103,7 +100,8 @@ template Post Type: post, page, product
                         <?php if ($next_photo): ?>
                             <!-- Vérifie si un article suivant existe -->
 
-                            <a href="<?php echo get_permalink($next_photo->ID); ?>" class="next-photo thumbnail-preview thumbnail-preview-one">
+                            <a href="<?php echo get_permalink($next_photo->ID); ?>"
+                                class="next-photo thumbnail-preview thumbnail-preview-one">
                                 <!-- Lien vers l'article suivant avec la classe "next-photo" et "thumbnail-preview" -->
                                 <span class="pagination-label pagination-label-one"> &rarr; </span>
                                 <!-- Chevron pointant vers la droite -->
@@ -136,7 +134,6 @@ template Post Type: post, page, product
         console.log('1test titre');
         jQuery('.open-popup').click(function () {
             console.log('2test titre');
-
             var titre00 = jQuery(this).data('titre00');
             console.log('3test titre');
             // Ouvre la modale

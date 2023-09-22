@@ -72,7 +72,7 @@ function load_more_photos()
   $args = array(
     'post_type' => 'photos',
     // Type de contenu personnalisé 'photos'
-    'posts_per_page' => 12,
+    'posts_per_page' => 9,
     // Nombre de photos par page
     'paged' => $paged,
     // Numéro de page
@@ -105,14 +105,18 @@ function load_more_photos()
             ?>
           </span>
         </h3>
-        <div class="eye-icon">
-          <a href="<?php the_permalink(); ?>" class="liens">&#128065;</a>
-          <!-- Lien vers la photo (icône d'œil) -->
+        <div class="icon-class">
+          <div class="eye-icon">
+            <a href="<?php the_permalink(); ?>" class="liens">🔗</a>
+            <!-- Lien vers la page de la photo (icône d'œil) -->
+          </div>
+
+          <div class="screen-icon liens" data-fancybox="gallery"
+            data-src="<?php echo esc_url(wp_get_attachment_url(get_post_thumbnail_id())); ?>">📸
+          </div>
+          <!-- Lien pour afficher la photo en grand dans une lightbox. -->
         </div>
 
-        <span class="screen-icon liens" data-fancybox="gallery"
-          data-src="<?php echo esc_url(wp_get_attachment_url(get_post_thumbnail_id())); ?>"> &#128437;
-        </span>
         <?php the_post_thumbnail('full'); ?> <!-- Afficher la photo -->
       </div>
       <?php
@@ -201,12 +205,12 @@ function filter_photos()
         </h3>
         <div class="icon-class">
           <div class="eye-icon">
-            <a href="<?php the_permalink(); ?>" class="liens">INFO</a>
+            <a href="<?php the_permalink(); ?>" class="liens">🔗</a>
             <!-- Lien vers la page de la photo (icône d'œil) -->
           </div>
 
           <div class="screen-icon liens" data-fancybox="gallery"
-            data-src="<?php echo esc_url(wp_get_attachment_url(get_post_thumbnail_id())); ?>">DIAPOS
+            data-src="<?php echo esc_url(wp_get_attachment_url(get_post_thumbnail_id())); ?>">📸
           </div>
           <!-- Lien pour afficher la photo en grand dans une lightbox. -->
         </div>

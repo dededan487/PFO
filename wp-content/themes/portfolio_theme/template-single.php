@@ -8,6 +8,7 @@ Template Name: Template single
 get_header();
 // Appelle l'en-tête du site.
 ?>
+<body <?php body_class(); ?>>
 
 <main id="main" class="site-main single-main " role="main">
     <!-- Balise principale du contenu de la page. -->

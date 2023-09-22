@@ -54,24 +54,32 @@ body {
 }
 
 
+
 #primary {
     margin-top: 1%;
     margin-left: 14%;
     width: 70%;
-    /* Ajustez la largeur du conteneur selon vos besoins */
+    /* Ajuste la largeur du conteneur selon vos besoins */
 
 }
 
 .custom-single-photos-page #primary {
     margin-top: 0;
-    /* Supprimez la marge supérieure pour la page de contact */
+    /* Supprime la marge supérieure pour la page de contact */
 
+}
+
+.custom-single-photos {
+    border: 5px solid rgb(97, 6, 223);
+    margin-left: 0 !important;
+    margin: 0 !important;
 }
 
 h1 {
     font-family: 'space_mono_italic_700', sans-serif;
     margin-bottom: 0px;
 }
+
 
 h2 {
     font-family: 'space_mono_italic_400', sans-serif;
@@ -115,9 +123,14 @@ button:hover {
     height: 80%;
 }
 
+header h1 {
+    color: white;
+}
+
 main {
     min-height: 40vh !important;
     padding-top: 9%;
+    height: 100%;
 }
 
 .main-photo {
@@ -256,11 +269,14 @@ main {
     height: 100%;
     /* 50% de la hauteur du viewport */
     object-fit: cover;
-    border-radius: 20px;
-
+    border-radius: 50px;
     text-align: center;
     filter: grayscale(100%);
 
+    border-radius: 50px;
+background: #e0e0e0;
+box-shadow:  20px 20px 60px #bebebe,
+             -20px -20px 60px #ffffff;
 }
 
 .related-thumbnail:hover .eye-icon {
@@ -290,7 +306,7 @@ span.titre1,
     margin-left: 5%;
     margin-right: 5%;
     color: white;
-    ext-transform: uppercase;
+
 }
 
 span.titre2 {
@@ -439,17 +455,24 @@ label {
 }
 
 #primary-menu li a {
-    color: white; /* Couleur de la police */
-    font-size: 18px; /* Taille de la police */
-    text-decoration: none; /* Supprimer la soulignement des liens */
-    padding: 10px 20px; /* Espacement autour du texte du lien */
+    color: white;
+    /* Couleur de la police */
+    font-size: 18px;
+    /* Taille de la police */
+    text-decoration: none;
+    /* Supprimer la soulignement des liens */
+    padding: 10px 20px;
+    /* Espacement autour du texte du lien */
     font-weight: 900;
 }
 
 #primary-menu li a:hover {
-    background-color: #333; /* Couleur de fond au survol */
-    color: #fff; /* Couleur de la police au survol */
-    transition: background-color 0.3s ease, color 0.3s ease; /* Animation de transition fluide */
+    background-color: #333;
+    /* Couleur de fond au survol */
+    color: #fff;
+    /* Couleur de la police au survol */
+    transition: background-color 0.3s ease, color 0.3s ease;
+    /* Animation de transition fluide */
 }
 
 
@@ -476,9 +499,13 @@ label {
 
 @media screen and (max-width: 800px) {
 
-
     #catalog {
         display: block !important;
+    }
+
+    .switch {
+        display: none !important;
+
     }
 
     /* Cacherle menu par défaut sur les écrans plus petits */
@@ -587,10 +614,6 @@ label {
         width: 60%;
     }
 
-    #load-more-button {
-        width: 50%;
-        margin-top: 8%;
-    }
 
 
 
@@ -745,12 +768,12 @@ main,
 
 
 .single {
-    width: 90% !important;
+
     color: white;
     display: block;
     padding-top: 1%;
     padding-bottom: 1%;
-    margin-left: 4% !important;
+
     text-transform: capitalize;
     font-family: 'space_mono_italic_400', sans-serif;
 
@@ -767,6 +790,7 @@ main,
 .photo-container-one {
     padding-top: 5%;
     padding-right: 3%;
+
 }
 
 .pagination-label-one {
@@ -776,6 +800,10 @@ main,
 
 .photo-container-one img {
     border-radius: 20px;
+    border-radius: 50px;
+    background: #e0e0e0;
+    box-shadow: 20px 20px 60px #bebebe,
+        -20px -20px 60px #ffffff;
 }
 
 .thumbnail-preview-one img {
@@ -784,11 +812,10 @@ main,
     margin-top: 3%
 }
 
-Je comprends,
-voici le même code en CSS simple : ```css
+
+
+
 /*______CONTAINER BIRD 88888888888888*/
-
-
 
 h1 {
     font-family: 'Arima Madurai', cursive;
@@ -935,7 +962,9 @@ h1 {
     padding: 20px;
     perspective: 700px;
     left: 43%;
-  position: relative;
+    position: relative;
+
+
 }
 
 .switch input {
@@ -1065,3 +1094,33 @@ h1 {
         opacity: 0;
     }
 }
+
+
+#load-more-button {
+    width: 30%;
+    margin: 5% 0 3% 0;
+
+}
+
+/*****************************parallax**/
+
+/* Style pour la section du catalogue avec effet de parallaxe */
+#catalog {
+    background-image: url('chemin-vers-votre-image.jpg'); /* Remplacez par le chemin de votre image */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/* Styles pour le contenu du catalogue */
+#catalog-content {
+    padding: 50px;
+    color: #fff; /* Couleur du texte */
+}
+
+
+#main {
+    margin-bottom: 100px; /* Ajustez la valeur selon vos besoins */
+}
+
