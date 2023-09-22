@@ -108,10 +108,16 @@ button:hover {
     position: relative;
     height: 300px;
     overflow: hidden;
+    margin-bottom: 1%;
 }
 
 .header-container img {
     height: 80%;
+}
+
+main {
+    min-height: 40vh !important;
+    padding-top: 9%;
 }
 
 .main-photo {
@@ -166,8 +172,9 @@ button:hover {
     /* Hauteur automatique avec une hauteur minimale de 100px */
     grid-auto-flow: dense;
     /* Activation du mode dense pour le masonry */
-    gap: 20px;
+    gap: 60px;
     /* Espacement entre les éléments */
+    margin-top: 2%;
 
 
 }
@@ -191,11 +198,14 @@ button:hover {
 #load-more {
     text-align: center;
     height: 150%;
+    margin-top: 8%;
+
 }
 
 .icon-class {
     display: flex;
     justify-content: space-around;
+    margin-bottom: 2%;
 }
 
 
@@ -217,8 +227,8 @@ button:hover {
 }
 
 .titre_categorie {
-    position: absolute;
-    background-color: rgba(0, 0, 0, 0.7);
+
+    ackground-color: rgba(0, 0, 0, 0.7);
     /* Arrière-plan semi-transparent */
     color: white;
     padding: 5px;
@@ -227,7 +237,7 @@ button:hover {
     transition: opacity 0.3s ease;
     border-radius: 20px;
     font-size: 200%;
-    display: none;
+
 
 
 }
@@ -247,9 +257,10 @@ button:hover {
     /* 50% de la hauteur du viewport */
     object-fit: cover;
     border-radius: 20px;
-    background-color: #17d576;
+
     text-align: center;
     filter: grayscale(100%);
+
 }
 
 .related-thumbnail:hover .eye-icon {
@@ -279,7 +290,11 @@ span.titre1,
     margin-left: 5%;
     margin-right: 5%;
     color: white;
-    text-transform: uppercase;
+    ext-transform: uppercase;
+}
+
+span.titre2 {
+    display: none;
 }
 
 #image_native {
@@ -388,7 +403,6 @@ label {
 
 
 .screen-icon {
-
     font-size: 20px;
     cursor: pointer;
     color: #ffffff;
@@ -410,6 +424,35 @@ label {
 
 }
 
+.menu-header_menu-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-image: linear-gradient(to bottom, #fdf9f9, #131313);
+    /* Dégradé de gris clair à gris anthracite */
+    z-index: 1000;
+    /* Valeur z-index pour contrôler la superposition du menu */
+    /* Autres styles de votre menu */
+    box-shadow: -25px 25px 47px #090909,
+        25px -25px 47px #ffffff;
+}
+
+#primary-menu li a {
+    color: white; /* Couleur de la police */
+    font-size: 18px; /* Taille de la police */
+    text-decoration: none; /* Supprimer la soulignement des liens */
+    padding: 10px 20px; /* Espacement autour du texte du lien */
+    font-weight: 900;
+}
+
+#primary-menu li a:hover {
+    background-color: #333; /* Couleur de fond au survol */
+    color: #fff; /* Couleur de la police au survol */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Animation de transition fluide */
+}
+
+
 
 .menu-toggle {
     display: none;
@@ -417,19 +460,26 @@ label {
 
 
 #more-photos-text {
-    color: red !important;
+    color: rgb(133, 131, 131) !important;
     font-size: 40px;
     position: relative;
 }
 
-#load-more-button {
-    margin-top: 3%;
+
+
+#primary-menu {
+    justify-content: space-around;
 }
 
-
 /*--------------------------------------------------------------*/
+/****************************************************************/
 
 @media screen and (max-width: 800px) {
+
+
+    #catalog {
+        display: block !important;
+    }
 
     /* Cacherle menu par défaut sur les écrans plus petits */
     #primary-menu {
@@ -438,7 +488,7 @@ label {
 
     .header-container {
         position: relative;
-        height: 500px;
+        height: 150px;
     }
 
     /* Styles pour le bouton du menu hamburger */
@@ -462,17 +512,15 @@ label {
         display: block;
     }
 
-    /* Styles pour le menu ouvert */
-    .menu-open #primary-menu {
-        display: block;
-
-    }
 
     #navigation {
         justify-content: center;
     }
 
-
+    .menu-header_menu-container {
+        display: flex;
+        justify-content: center;
+    }
 
 
 
@@ -540,7 +588,8 @@ label {
     }
 
     #load-more-button {
-        width: 50%
+        width: 50%;
+        margin-top: 8%;
     }
 
 
@@ -868,4 +917,151 @@ h1 {
     /* Vous pouvez ajuster ce pourcentage en fonction de la taille souhaitée */
     max-width: 50px;
     /* Vous pouvez également spécifier une largeur maximale en pixels */
+}
+
+
+
+/********************LODER TRANSITION******************/
+
+
+
+.switch {
+    display: block;
+    background-color: black;
+    width: 150px;
+    height: 195px;
+    box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.2), 0 0 1px 2px black, inset 0 2px 2px -2px white, inset 0 0 2px 15px #47434c, inset 0 0 2px 22px black;
+    border-radius: 5px;
+    padding: 20px;
+    perspective: 700px;
+    left: 43%;
+  position: relative;
+}
+
+.switch input {
+    display: none;
+}
+
+.switch input:checked+.button {
+    transform: translateZ(20px) rotateX(25deg);
+    box-shadow: 0 -10px 20px #ff1818;
+}
+
+.switch input:checked+.button .light {
+    animation: flicker 0.2s infinite 0.3s;
+}
+
+.switch input:checked+.button .shine {
+    opacity: 1;
+}
+
+.switch input:checked+.button .shadow {
+    opacity: 0;
+}
+
+.switch .button {
+    display: block;
+    transition: all 0.3s cubic-bezier(1, 0, 1, 1);
+    transform-origin: center center -20px;
+    transform: translateZ(20px) rotateX(-25deg);
+    transform-style: preserve-3d;
+    background-color: #9b0621;
+    height: 100%;
+    position: relative;
+    cursor: pointer;
+    background: linear-gradient(#980000 0%, #6f0000 30%, #6f0000 70%, #980000 100%);
+    background-repeat: no-repeat;
+}
+
+.switch .button::before {
+    content: "";
+    background: linear-gradient(rgba(255, 255, 255, 0.8) 10%, rgba(255, 255, 255, 0.3) 30%, #650000 75%, #320000) 50% 50%/97% 97%, #b10000;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 50px;
+    transform-origin: top;
+    transform: rotateX(-90deg);
+    position: absolute;
+    top: 0;
+}
+
+.switch .button::after {
+    content: "";
+    background-image: linear-gradient(#650000, #320000);
+    width: 100%;
+    height: 50px;
+    transform-origin: top;
+    transform: translateY(50px) rotateX(-90deg);
+    position: absolute;
+    bottom: 0;
+    box-shadow: 0 50px 8px 0px black, 0 80px 20px 0px rgba(0, 0, 0, 0.5);
+}
+
+.switch .light {
+    opacity: 0;
+    animation: light-off 1s;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: radial-gradient(#ffc97e, #ff1818 40%, transparent 70%);
+}
+
+.switch .dots {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: radial-gradient(transparent 30%, rgba(101, 0, 0, 0.7) 70%);
+    background-size: 10px 10px;
+}
+
+.switch .characters {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(white, white) 50% 20%/5% 20%, radial-gradient(circle, transparent 50%, white 52%, white 70%, transparent 72%) 50% 80%/33% 25%;
+    background-repeat: no-repeat;
+}
+
+.switch .shine {
+    transition: all 0.3s cubic-bezier(1, 0, 1, 1);
+    opacity: 0.3;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(white, transparent 3%) 50% 50%/97% 97%, linear-gradient(rgba(255, 255, 255, 0.5), transparent 50%, transparent 80%, rgba(255, 255, 255, 0.5)) 50% 50%/97% 97%;
+    background-repeat: no-repeat;
+}
+
+.switch .shadow {
+    transition: all 0.3s cubic-bezier(1, 0, 1, 1);
+    opacity: 1;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(transparent 70%, rgba(0, 0, 0, 0.8));
+    background-repeat: no-repeat;
+}
+
+@keyframes flicker {
+    0% {
+        opacity: 1;
+    }
+
+    80% {
+        opacity: 0.8;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes light-off {
+    0% {
+        opacity: 1;
+    }
+
+    80% {
+        opacity: 0;
+    }
 }

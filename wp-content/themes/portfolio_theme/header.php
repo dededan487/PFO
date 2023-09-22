@@ -27,7 +27,7 @@
         <!-- ouvre la balise body et j'ajoute des classes dynamiques qui dépendent de la page affichée -->
 
         <nav id="navigation">
-            <img src="<?php echo get_template_directory_uri(); ?>/assets/logo3.png" class="logo3" alt="Titre">
+            <!--<img src="<?php echo get_template_directory_uri(); ?>/assets/logo3.png" class="logo3" alt="Titre">-->
             <!-- ajoute une image du logo en utilisant le chemin du modèle de thème -->
 
             <button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">

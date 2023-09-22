@@ -22,8 +22,8 @@ function enqueue_scripts_and_styles()
     'filter-photos',
     'filter_photos',
     array(
-      'ajax_url'=> admin_url('admin-ajax.php'),
-      'nonce'=> wp_create_nonce('filter-photos-nonce')
+      'ajax_url' => admin_url('admin-ajax.php'),
+      'nonce' => wp_create_nonce('filter-photos-nonce')
     )
   );
 }
@@ -74,7 +74,8 @@ function load_more_photos()
     // Type de contenu personnalisé 'photos'
     'posts_per_page' => 12,
     // Nombre de photos par page
-    'paged' => $paged, // Numéro de page
+    'paged' => $paged,
+    // Numéro de page
   );
 
   // Exécute la requête WP_Query
@@ -118,7 +119,7 @@ function load_more_photos()
     endwhile;
     wp_reset_postdata();
   else:
-    echo '<p id="more-photos-text">Plus de photos </p>'; // Aucune photo trouvée
+    echo '<p id="more-photos-text">Plus de projets...pour le moment. </p>'; // Aucune photo trouvée
   endif;
 
   die(); // Termine l'exécution du script
@@ -147,7 +148,8 @@ function filter_photos()
     // Tri par valeur numérique (année)
     'meta_key' => 'annee',
     //tri pour l'année    
-    'order' => $order, // Utilisation de la valeur sélectionnée
+    'order' => $order,
+    // Utilisation de la valeur sélectionnée
   );
 
   // Si une catégorie est sélectionnée, ajouter la taxonomie à la requête
@@ -197,14 +199,17 @@ function filter_photos()
             ?>
           </span>
         </h3>
-        <div class="eye-icon">
-          <a href="<?php the_permalink(); ?>" class="liens">&#128065;</a>
-          <!-- Lien vers la photo (icône d'œil) -->
-        </div>
+        <div class="icon-class">
+          <div class="eye-icon">
+            <a href="<?php the_permalink(); ?>" class="liens">INFO</a>
+            <!-- Lien vers la page de la photo (icône d'œil) -->
+          </div>
 
-        <span class="screen-icon liens" data-fancybox="gallery"
-          data-src="<?php echo esc_url(wp_get_attachment_url(get_post_thumbnail_id())); ?>"> &#128437;
-        </span>
+          <div class="screen-icon liens" data-fancybox="gallery"
+            data-src="<?php echo esc_url(wp_get_attachment_url(get_post_thumbnail_id())); ?>">DIAPOS
+          </div>
+          <!-- Lien pour afficher la photo en grand dans une lightbox. -->
+        </div>
         <?php the_post_thumbnail('full'); ?> <!-- Afficher la photo -->
       </div>
       <?php
@@ -255,18 +260,14 @@ function add_custom_body_class($classes)
 add_filter('body_class', 'add_custom_body_class');
 
 
-function custom_template_for_custom_post_type($template) {
+function custom_template_for_custom_post_type($template)
+{
   if (is_singular('modele_de_page_personnalise')) {
-      // Remplacez 'votre_type_de_post_custom' par le slug de votre type de post personnalisé
-      $custom_template = locate_template('template-single.php');
-      if (!empty($custom_template)) {
-          return $custom_template;
-      }
+    $custom_template = locate_template('template-single.php');
+    if (!empty($custom_template)) {
+      return $custom_template;
+    }
   }
   return $template;
 }
 add_filter('template_include', 'custom_template_for_custom_post_type');
-
-
-
-

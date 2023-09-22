@@ -2,41 +2,33 @@
 /*
 Template Name: Catalog Template
 */
-// Ce fichier est un modèle de page WordPress  "Catalog Template".
+// Ce fichier est un modèle de page WordPress "Catalog Template".
 
 // Inclure l'en-tête du site
 get_header();
 // Appelle l'en-tête du site.
-
 ?>
-
 
 <main id="main" class="site-main" role="main">
     <!-- Balise principale du contenu de la page. -->
+  
 
-    <div id="primary" class="content-area">
+    <div id="primary" class="content-area" >
         <!-- Div principale de la zone de contenu. -->
 
-        <div class="filtres">
-            <!-- Div contenant les filtres pour la sélection des photos. -->
-
-
-
-
-            <!-- Champ de sélection pour l'ordre de tri -->
-            <select id="order-filter" class="filter-range">
-                <!-- Menu déroulant pour trier les photos. -->
-                <option value="ASC">Premier Projet</option>
-                <!-- Option pour trier par photos les plus anciennes. -->
-                <option value="DESC">Dernier Projet</option>
-                <!-- Option pour trier par photos les plus récentes. -->
-
-            </select>
-            <!-- Fin du champ de sélection pour l'ordre de tri. -->
+        <label class="switch">
+        <input type="checkbox"  id="toggle-catalog">
+        <div class="button">
+            <div class="light"></div>
+            <div class="dots"></div>
+            <div class="characters"></div>
+            <div class="shine"></div>
+            <div class="shadow"></div>
         </div>
-        <!-- Fin de la div contenant les filtres. -->
-
-        <div id="catalog">
+    </label>
+        
+        
+        <div id="catalog" style="display: none;">
             <!-- Div pour afficher les photos chargées via AJAX. -->
 
             <!-- Boucle pour afficher les photos du CPT "photos" -->
@@ -68,7 +60,7 @@ get_header();
                                 <?php the_title(); ?>
                             </span> <!-- Affiche le titre de l'article -->
 
-                            <span class="titre1">
+                            <span class="titre2">
                                 <?php echo esc_attr(strip_tags(get_field('titre'))); ?>
                             </span> <!-- Affiche le titre du projet -->
 
@@ -98,7 +90,7 @@ get_header();
         </div>
         <!-- Fin de la div pour afficher les photos. -->
 
-        <div id="load-more">
+        <div id="load-more" style="display: none;" >
             <!-- Div pour charger plus de photos. -->
             <button id="load-more-button">Charger plus</button>
             <!-- Bouton pour charger plus de photos via AJAX. -->
@@ -109,10 +101,28 @@ get_header();
     <!-- Fin de la div principale de la zone de contenu. -->
 </main>
 <!-- Fin de la balise principale du contenu. -->
-</div>
 
 <?php
 // Inclure le pied de page du site
 get_footer();
 // Appelle le pied de page du site.
 ?>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+    const toggleCatalog = document.getElementById('toggle-catalog');
+    const catalog = document.getElementById('catalog');
+    const loadMoreButton = document.getElementById('load-more');
+
+    toggleCatalog.addEventListener('change', function () {
+        if (toggleCatalog.checked) {
+            catalog.style.display = 'grid'; // Afficher le catalogue
+            loadMoreButton.style.display = 'block'; // Afficher le bouton "Charger plus"
+        } else {
+            catalog.style.display = 'none'; // Masquer le catalogue
+            loadMoreButton.style.display = 'none'; // Masquer le bouton "Charger plus"
+        }
+    });
+});
+
+</script>
