@@ -16,7 +16,7 @@ template Post Type: post, page, product
             the_post();
             ?>
 
-            <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+            <article class="main-parallax" id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
                 <!-- Article avec un ID  et  classes basées sur le type de contenu -->
 
                 <div class="entry-content">
@@ -119,6 +119,9 @@ template Post Type: post, page, product
 
         <?php endwhile; ?>
     </div><!-- #primary -->
+    <button class="retour">
+    <a href="<?php echo site_url('/accueil/?catalog=open'); ?>">Retour Projets</a>
+</button>
 </main><!-- #main -->
 
 
@@ -166,6 +169,25 @@ template Post Type: post, page, product
         menuButton.attr('data-titre00', titreValue);
     });
 </script>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const header = document.querySelector('.header-parallax');
+        const main = document.querySelector('.main-parallax');
+
+        window.addEventListener('scroll', function () {
+            const scrollY = window.scrollY;
+
+            // Déplacez l'en-tête vers le haut (effet de parallaxe)
+            header.style.transform = `translateY(${scrollY * 0.5}px)`;
+
+            // Déplacez le contenu principal vers le bas (effet de parallaxe inverse)
+            main.style.transform = `translateY(-${scrollY * 0.3}px)`;
+        });
+    });
+</script>
+
+
 
 </body>
 

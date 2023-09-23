@@ -283,3 +283,9 @@ function allow_svg_upload($mimes) {
   return $mimes;
 }
 add_filter('upload_mimes', 'allow_svg_upload');
+
+
+function ajouter_css_personnalise() {
+  wp_enqueue_style('custom1', get_template_directory_uri() . '/styles_css_rajout/custom1.css');
+}
+add_action('wp_enqueue_scripts', 'ajouter_css_personnalise');

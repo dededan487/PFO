@@ -1,6 +1,6 @@
 <!-- bandeau  pouvant etre  supprimé ou ajouter -->
 <div class="oiseaux">
-	<div class="header-container  ">
+	<div class="header-container header-parallax ">
 		<img src="<?php echo get_template_directory_uri(); ?>/assets/Titre%20header3.png" alt="Titre"
 			class="header-title-image">
 

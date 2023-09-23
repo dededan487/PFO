@@ -48,6 +48,7 @@ Text Domain: portfolio_domi_theme
     font-style: normal;
 }
 
+
 /* Centrer horizontalement en utilisant margin: auto; */
 body {
     margin: 0;
@@ -59,7 +60,8 @@ body {
     margin-top: 1%;
     margin-left: 14%;
     width: 70%;
-    /* Ajuste la largeur du conteneur selon vos besoins */
+    /* Ajuste la largeur du conteneur selon besoins */
+    font-family: cursive;
 
 }
 
@@ -143,7 +145,7 @@ main {
 
 .header-title-image {
     position: absolute;
-   z-index: 0;
+    z-index: 0;
     top: 60%;
     left: 35%;
     transform: translate(-50%, -50%);
@@ -241,7 +243,7 @@ main {
 
 .titre_categorie {
 
-    
+
     /* Arrière-plan semi-transparent */
     color: white;
     padding: 5px;
@@ -269,14 +271,11 @@ main {
     height: 100%;
     /* 50% de la hauteur du viewport */
     object-fit: cover;
-    border-radius: 50px;
     text-align: center;
-    filter: grayscale(100%);
-
-    border-radius: 50px;
-background: #e0e0e0;
-box-shadow:  20px 20px 60px #bebebe,
-             -20px -20px 60px #ffffff;
+    border-radius: 20px;
+    background: #e0e0e0;
+    box-shadow: 20px 20px 60px #bebebe,
+        -20px -20px 60px #ffffff;
 }
 
 .related-thumbnail:hover .eye-icon {
@@ -287,7 +286,7 @@ box-shadow:  20px 20px 60px #bebebe,
 
 
 .related-thumbnail:hover img {
-    filter: none !important;
+    filter: grayscale(100%);
 
 }
 
@@ -303,9 +302,14 @@ span.categorie1 p {
 
 span.titre1,
 .categorie1 {
-    margin-left: 5%;
-    margin-right: 5%;
-    color: white;
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    color: rgb(218, 241, 14);
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    z-index: 10;
+
 
 }
 
@@ -449,7 +453,7 @@ label {
     z-index: 1000;
     /* Valeur z-index pour contrôler la superposition du menu */
     /* Autres styles de votre menu */
- 
+
 }
 
 #primary-menu li a {
@@ -471,8 +475,8 @@ label {
     /* Animation de transition fluide */
 }
 
-#menu-item-44  a{
-    
+#menu-item-44 a {
+
     /* Couleur de fond au survol */
     color: rgb(226, 80, 80) !important;
 }
@@ -483,18 +487,18 @@ label {
 }
 
 #menu-item-37:hover {
-    background-color:rgb(226, 80, 80);
+    background-color: rgb(226, 80, 80);
     /* Couleur de fond au survol */
 }
 
 #menu-item-37 a {
-    color:rgb(41, 117, 240) !important;
-    /* Couleur de fond au survol */  
+    color: rgb(41, 117, 240) !important;
+    /* Couleur de fond au survol */
 }
 
 
 #menu-item-47:hover {
-    background-color: rgb(41, 117, 240) ;
+    background-color: rgb(41, 117, 240);
     /* Couleur de fond au survol */
 }
 
@@ -640,8 +644,15 @@ label {
         width: 60%;
     }
 
+#navigation {
+    justify-content: right;
+    background-color: yellowgreen;
+}
 
-
+.oiseaux {
+    margin: 0 0 auto;
+    
+}
 
     .footer-links {
         flex-direction: column;
@@ -668,6 +679,25 @@ label {
 }
 
 /*effet parallax header*/
+.header-parallax {
+    /* Votre style d'en-tête ici */
+    background-image: url('chemin-vers-votre-image.jpg');
+    /* Ajoutez votre image de fond */
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+    /* Assurez-vous que l'image de fond reste fixe lors du défilement */
+}
+
+.main-parallax {
+    /* Votre style de contenu principal ici */
+    position: relative;
+    /* Assurez-vous que le contenu principal a une position relative */
+    z-index: 1;
+    /* Assurez-vous que le contenu principal est au-dessus de l'en-tête */
+}
+
+
 
 /* Styles de base pour le header */
 
@@ -687,7 +717,7 @@ main,
     }
 }
 
- @keyframes wheelHueColor {
+@keyframes wheelHueColor {
 
     from,
     to {
@@ -816,7 +846,7 @@ h1 {
 
     /* Styles spécifiques à chaque "bird" */
     position: relative;
-    
+
 }
 
 .bird--one {
@@ -1080,24 +1110,12 @@ h1 {
 
 /*****************************parallax**/
 
-/* Style pour la section du catalogue avec effet de parallaxe */
-#catalog {
-    background-image: url('chemin-vers-votre-image.jpg'); /* Remplacez par le chemin de votre image */
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
 
-/* Styles pour le contenu du catalogue */
-#catalog-content {
-    padding: 50px;
-    color: #fff; /* Couleur du texte */
-}
 
 
 #main {
-    margin-bottom: 00px; /* Ajustez la valeur selon vos besoins */
+    margin-bottom: 00px;
+    /* Ajustez la valeur selon vos besoins */
     position: relative;
     z-index: 1;
 }
@@ -1105,21 +1123,24 @@ h1 {
 
 /* CSS */
 #main {
-    transition: transform 0.8s ease; /* Ajoute une transition fluide */
-    transform: translateY(0); /* Position de départ */
-    
+    transition: transform 0.8s ease;
+    /* Ajoute une transition fluide */
+    transform: translateY(0);
+    /* Position de départ */
+
 }
 
 #main.shifted {
-    transform: translateY(-380px); /* Position déplacée de 400px vers le haut */
+    transform: translateY(-380px);
+    /* Position déplacée de 400px vers le haut */
 }
 
-body{
-    background-image: url('http://localhost/PORTFOLIO_TWO/wp-content/uploads/2023/09/Panda-bear-silhouette-Logo-design.png'); /* Remplacez "chemin-vers-votre-image.jpg" par le chemin de votre image de fond */
-    
+body {
+    background-image: url('http://localhost/PORTFOLIO_TWO/wp-content/uploads/2023/09/Panda-bear-silhouette-Logo-design.png');
+    /* Remplacez "chemin-vers-votre-image.jpg" par le chemin de votre image de fond */
+
     background-position: bottom center;
     transition: transform 0.5s ease;
-    transform: translateY(0);
     z-index: 5000;
 }
 
@@ -1134,32 +1155,33 @@ footer {
 }
 
 
-.footer-link2 p  {
+.footer-link2 p {
     color: #ee0808 !important;
 }
 
 
 .footer-link2 a:hover {
-    
+
     /* Couleur de fond au survol */
     color: rgb(226, 133, 80) !important;
 }
 
 
-.footer-link1 a  {
+.footer-link1 a {
     color: #08ee68 !important;
 }
+
 .footer-link1 a:hover {
-    
+
     /* Couleur de fond au survol */
     color: rgb(97, 80, 226) !important;
 }
 
 .footer-link a {
-    color: rgb(237, 233, 18) !important; 
+    color: rgb(237, 233, 18) !important;
 }
 
 
-.footer-link a:hover{
-    color: rgb(7, 107, 246) !important; 
+.footer-link a:hover {
+    color: rgb(7, 107, 246) !important;
 }

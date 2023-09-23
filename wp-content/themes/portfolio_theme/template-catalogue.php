@@ -9,6 +9,7 @@ get_header();
 // Appelle l'en-tête du site.
 ?>
 
+
 <main id="main" class="site-main" role="main">
     <!-- Balise principale du contenu de la page. -->
 
@@ -111,30 +112,48 @@ get_footer();
 
 <script>
     document.addEventListener('DOMContentLoaded', function () {
-    const toggleCatalog = document.getElementById('toggle-catalog');
-    const catalog = document.getElementById('catalog');
-    const loadMoreButton = document.getElementById('load-more');
-    const main = document.getElementById('main'); // Ajoutez l'élément main
+        const toggleCatalog = document.getElementById('toggle-catalog');
+        const catalog = document.getElementById('catalog');
+        const loadMoreButton = document.getElementById('load-more');
+        const main = document.getElementById('main'); // Ajoute l'élément main
 
-    toggleCatalog.addEventListener('change', function () {
-        if (toggleCatalog.checked) {
-            catalog.style.display = 'grid'; // Afficher le catalogue
-            loadMoreButton.style.display = 'block'; // Afficher le bouton "Charger plus"
-
-            // Ajouter la classe shifted au main
+        // Vérifier le paramètre d'URL pour activer le catalogue
+        const urlParams = new URLSearchParams(window.location.search);
+        if (urlParams.has('catalog') && urlParams.get('catalog') === 'open') {
+            toggleCatalog.checked = true;
+            catalog.style.display = 'grid';
+            loadMoreButton.style.display = 'block';
             main.classList.add('shifted');
-        } else {
-            catalog.style.display = 'none'; // Masquer le catalogue
-            loadMoreButton.style.display = 'none'; // Masquer le bouton "Charger plus"
-
-            // Supprimer la classe shifted du main
-            main.classList.remove('shifted');
         }
+
+        toggleCatalog.addEventListener('change', function () {
+            if (toggleCatalog.checked) {
+                // Mettre à jour le paramètre d'URL pour activer le catalogue
+                const url = new URL(window.location.href);
+                url.searchParams.set('catalog', 'open');
+                history.replaceState(null, null, url.toString());
+
+                catalog.style.display = 'grid'; // Afficher le catalogue
+                loadMoreButton.style.display = 'block'; // Afficher le bouton "Charger plus"
+
+                // Ajouter la classe shifted au main
+                main.classList.add('shifted');
+            } else {
+                // Supprimer le paramètre d'URL pour désactiver le catalogue
+                const url = new URL(window.location.href);
+                url.searchParams.delete('catalog');
+                history.replaceState(null, null, url.toString());
+
+                catalog.style.display = 'none'; // Masquer le catalogue
+                loadMoreButton.style.display = 'none'; // Masquer le bouton "Charger plus"
+
+                // Supprimer la classe shifted du main
+                main.classList.remove('shifted');
+            }
+        });
     });
-});
-
-
 </script>
+
 
 
 

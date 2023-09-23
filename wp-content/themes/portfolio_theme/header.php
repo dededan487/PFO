@@ -20,11 +20,8 @@
     <!-- appelle la fonction wp_head() pour inclure les scripts et les styles nécessaires dans l'en-tête du site -->
 </head>
 <body <?php body_class('custom-body-class'); ?>>
-<header id='header'>
-     <!-- bandeau  pouvant etre  supprimé ou ajouter -->
-     
+<header id='header' >
 
-    
         <!-- ouvre la balise body et j'ajoute des classes dynamiques qui dépendent de la page affichée -->
 
         <nav id="navigation">
