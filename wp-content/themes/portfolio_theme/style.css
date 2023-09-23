@@ -120,7 +120,7 @@ button:hover {
 }
 
 .header-container img {
-    height: 80%;
+    height: 60%;
 }
 
 header h1 {
@@ -143,9 +143,9 @@ main {
 
 .header-title-image {
     position: absolute;
-    z-index: 1;
-    top: 50%;
-    left: 50%;
+   z-index: 0;
+    top: 60%;
+    left: 35%;
     transform: translate(-50%, -50%);
     width: 70%;
     max-width: 1000px;
@@ -218,14 +218,14 @@ main {
 .icon-class {
     display: flex;
     justify-content: space-around;
-    margin-bottom: 2%;
+    margin-bottom: ;
 }
 
 
 .eye-icon {
 
     transform: translate(-50%, 0%);
-    font-size: 20px;
+    font-size: 40px;
     opacity: 0;
     /* Masquer l'icône au départ */
     transition: opacity 0.3s ease;
@@ -241,7 +241,7 @@ main {
 
 .titre_categorie {
 
-    ackground-color: rgba(0, 0, 0, 0.7);
+    
     /* Arrière-plan semi-transparent */
     color: white;
     padding: 5px;
@@ -419,7 +419,7 @@ label {
 
 
 .screen-icon {
-    font-size: 20px;
+    font-size: 40px;
     cursor: pointer;
     color: #ffffff;
     z-index: 10;
@@ -445,17 +445,15 @@ label {
     top: 0;
     left: 0;
     width: 100%;
-    background-image: linear-gradient(to bottom, #fdf9f9, #131313);
-    /* Dégradé de gris clair à gris anthracite */
+    background: white;
     z-index: 1000;
     /* Valeur z-index pour contrôler la superposition du menu */
     /* Autres styles de votre menu */
-    box-shadow: -25px 25px 47px #090909,
-        25px -25px 47px #ffffff;
+ 
 }
 
 #primary-menu li a {
-    color: white;
+    color: black;
     /* Couleur de la police */
     font-size: 18px;
     /* Taille de la police */
@@ -467,15 +465,43 @@ label {
 }
 
 #primary-menu li a:hover {
-    background-color: #333;
-    /* Couleur de fond au survol */
-    color: #fff;
+    color: #fff !important;
     /* Couleur de la police au survol */
     transition: background-color 0.3s ease, color 0.3s ease;
     /* Animation de transition fluide */
 }
 
+#menu-item-44  a{
+    
+    /* Couleur de fond au survol */
+    color: rgb(226, 80, 80) !important;
+}
 
+#menu-item-44:hover {
+    background-color: #185df0;
+    /* Couleur de fond au survol */
+}
+
+#menu-item-37:hover {
+    background-color:rgb(226, 80, 80);
+    /* Couleur de fond au survol */
+}
+
+#menu-item-37 a {
+    color:rgb(41, 117, 240) !important;
+    /* Couleur de fond au survol */  
+}
+
+
+#menu-item-47:hover {
+    background-color: rgb(41, 117, 240) ;
+    /* Couleur de fond au survol */
+}
+
+#menu-item-47 a {
+    color: #8cec9e !important;
+    /* Couleur de fond au survol */
+}
 
 .menu-toggle {
     display: none;
@@ -491,7 +517,7 @@ label {
 
 
 #primary-menu {
-    justify-content: space-around;
+    justify-content: end;
 }
 
 /*--------------------------------------------------------------*/
@@ -661,7 +687,7 @@ main,
     }
 }
 
-/* @keyframes wheelHueColor {
+ @keyframes wheelHueColor {
 
     from,
     to {
@@ -704,7 +730,7 @@ main,
         color: hsl(288, 60%, 40%);
     }
 }
-*/
+
 
 main,
 .header-container {
@@ -712,59 +738,6 @@ main,
     /*display: flex;*/
 }
 
-@keyframes wheelHueColor {
-
-    from,
-    to {
-        color: hsl(0, 0%, 0%);
-        /* Noir anthracite */
-    }
-
-    10% {
-        color: hsl(0, 0%, 10%);
-        /* Gris anthracite */
-    }
-
-    20% {
-        color: hsl(0, 0%, 20%);
-        /* Gris foncé */
-    }
-
-    30% {
-        color: hsl(0, 0%, 30%);
-        /* Gris moyen */
-    }
-
-    40% {
-        color: hsl(0, 0%, 40%);
-        /* Gris clair */
-    }
-
-    50% {
-        color: hsl(0, 0%, 50%);
-        /* Gris très clair */
-    }
-
-    60% {
-        color: hsl(0, 0%, 40%);
-        /* Gris clair */
-    }
-
-    70% {
-        color: hsl(0, 0%, 30%);
-        /* Gris moyen */
-    }
-
-    80% {
-        color: hsl(0, 0%, 20%);
-        /* Gris foncé */
-    }
-
-    90% {
-        color: hsl(0, 0%, 10%);
-        /* Gris anthracite */
-    }
-}
 
 
 .single {
@@ -784,6 +757,7 @@ main,
     margin-left: 4% !important;
     width: 100% !important;
     margin-top: 1% !important;
+    z-index: 1;
 
 }
 
@@ -823,14 +797,14 @@ h1 {
     /* Couleur du texte */
     font-size: 4rem;
     letter-spacing: -3px;
-    text-shadow: 0px 1px 1px rgba(255, 255, 255, 0.6);
+    text-shadow: 0px 1px 1px rgba(182, 106, 106, 0.6);
     position: relative;
     z-index: 3;
 }
 
 
 .bird {
-    background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/174479/bird-cells-new.svg);
+    background-image: url(http://localhost/PORTFOLIO_TWO/wp-content/uploads/2023/09/bird-cells-blanc.svg);
     background-size: auto 100%;
     width: 88px;
     height: 125px;
@@ -841,6 +815,8 @@ h1 {
     animation-iteration-count: infinite;
 
     /* Styles spécifiques à chaque "bird" */
+    position: relative;
+    
 }
 
 .bird--one {
@@ -873,7 +849,7 @@ h1 {
     animation-name: fly-right-one;
     animation-timing-function: linear;
     animation-iteration-count: infinite;
-    z-index: 5;
+    z-index: 1;
 
 }
 
@@ -1121,6 +1097,69 @@ h1 {
 
 
 #main {
-    margin-bottom: 100px; /* Ajustez la valeur selon vos besoins */
+    margin-bottom: 00px; /* Ajustez la valeur selon vos besoins */
+    position: relative;
+    z-index: 1;
 }
 
+
+/* CSS */
+#main {
+    transition: transform 0.8s ease; /* Ajoute une transition fluide */
+    transform: translateY(0); /* Position de départ */
+    
+}
+
+#main.shifted {
+    transform: translateY(-380px); /* Position déplacée de 400px vers le haut */
+}
+
+body{
+    background-image: url('http://localhost/PORTFOLIO_TWO/wp-content/uploads/2023/09/Panda-bear-silhouette-Logo-design.png'); /* Remplacez "chemin-vers-votre-image.jpg" par le chemin de votre image de fond */
+    
+    background-position: bottom center;
+    transition: transform 0.5s ease;
+    transform: translateY(0);
+    z-index: 5000;
+}
+
+/**************bouton footer couleur*********/
+
+footer {
+    font-family: cursive;
+}
+
+.footer-links {
+    font-size: 18px !important;
+}
+
+
+.footer-link2 p  {
+    color: #ee0808 !important;
+}
+
+
+.footer-link2 a:hover {
+    
+    /* Couleur de fond au survol */
+    color: rgb(226, 133, 80) !important;
+}
+
+
+.footer-link1 a  {
+    color: #08ee68 !important;
+}
+.footer-link1 a:hover {
+    
+    /* Couleur de fond au survol */
+    color: rgb(97, 80, 226) !important;
+}
+
+.footer-link a {
+    color: rgb(237, 233, 18) !important; 
+}
+
+
+.footer-link a:hover{
+    color: rgb(7, 107, 246) !important; 
+}

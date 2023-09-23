@@ -4,10 +4,10 @@
         <div class="footer-link">
             <a href="<?php echo esc_url(home_url('/mentions-legales')); ?>">Mentions légales</a>
         </div>
-        <div class="footer-link">
+        <div class="footer-link1">
             <a href="<?php echo esc_url(home_url('/politique-de-confidentialite')); ?>">Vie privée</a>
         </div>
-        <div class="footer-link">
+        <div class="footer-link2">
             <p class="all-rights-reserved">Tous droits réservés</p>
         </div>
     </div>

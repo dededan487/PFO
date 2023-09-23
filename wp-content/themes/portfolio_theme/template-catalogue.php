@@ -111,51 +111,31 @@ get_footer();
 
 <script>
     document.addEventListener('DOMContentLoaded', function () {
-        const toggleCatalog = document.getElementById('toggle-catalog');
-        const catalog = document.getElementById('catalog');
-        const loadMoreButton = document.getElementById('load-more');
+    const toggleCatalog = document.getElementById('toggle-catalog');
+    const catalog = document.getElementById('catalog');
+    const loadMoreButton = document.getElementById('load-more');
+    const main = document.getElementById('main'); // Ajoutez l'élément main
 
-        toggleCatalog.addEventListener('change', function () {
-            if (toggleCatalog.checked) {
-                catalog.style.display = 'grid'; // Afficher le catalogue
-                loadMoreButton.style.display = 'block'; // Afficher le bouton "Charger plus"
-            } else {
-                catalog.style.display = 'none'; // Masquer le catalogue
-                loadMoreButton.style.display = 'none'; // Masquer le bouton "Charger plus"
-            }
-        });
-    });
-</script>
+    toggleCatalog.addEventListener('change', function () {
+        if (toggleCatalog.checked) {
+            catalog.style.display = 'grid'; // Afficher le catalogue
+            loadMoreButton.style.display = 'block'; // Afficher le bouton "Charger plus"
 
+            // Ajouter la classe shifted au main
+            main.classList.add('shifted');
+        } else {
+            catalog.style.display = 'none'; // Masquer le catalogue
+            loadMoreButton.style.display = 'none'; // Masquer le bouton "Charger plus"
 
-<script>
-
-document.addEventListener('DOMContentLoaded', function () {
-    const catalog = document.getElementById('main');
-    const header = document.getElementById('header-bandeau');
-    const footer = document.getElementById('footer'); // Assurez-vous de récupérer l'élément du footer
-
-    // Vérifiez si l'élément du footer a été correctement récupéré
-    if (footer) {
-        // Affiche le contenu du footer dans la console
-        console.log(footer.innerHTML);
-    } else {
-        // Si l'élément n'a pas été trouvé, affiche un message d'erreur
-        console.error('Le footer n\'a pas été trouvé.');
-    }
-
-    window.addEventListener('scroll', function () {
-        const scrollY = window.scrollY;
-        catalog.style.transform = `translateY(${scrollY * 0.5}px)`;
-        header.style.transform = `translateY(${scrollY * 0.2}px)`;
-
-        // Ajustez la hauteur du conteneur principal pour inclure la hauteur du footer
-        if (footer) {
-            const footerHeight = footer.offsetHeight;
-            catalog.style.height = `calc(100vh - ${footerHeight}px)`;
+            // Supprimer la classe shifted du main
+            main.classList.remove('shifted');
         }
     });
 });
 
+
 </script>
+
+
+
 

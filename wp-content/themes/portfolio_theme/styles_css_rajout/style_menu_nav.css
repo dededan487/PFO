@@ -26,17 +26,18 @@
 #primary-menu li a {
     text-decoration: none;
     font-size: 14px;
-    color: #000; /* Couleur du texte */
+    
     margin-right: 40px;
 }
 
-#primary-menu li a:hover {
-    text-decoration: underline;
-}
 
 /* Masquer les points devant chaque mot */
 #primary-menu li {
     list-style-type:none
 }
 
+
+#primary-menu{
+    font-family: cursive;
+}
 

@@ -275,3 +275,11 @@ function custom_template_for_custom_post_type($template)
   return $template;
 }
 add_filter('template_include', 'custom_template_for_custom_post_type');
+
+
+// Autoriser les fichiers SVG
+function allow_svg_upload($mimes) {
+  $mimes['svg'] = 'image/svg+xml';
+  return $mimes;
+}
+add_filter('upload_mimes', 'allow_svg_upload');

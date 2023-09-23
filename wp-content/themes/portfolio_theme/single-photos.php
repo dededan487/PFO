@@ -29,7 +29,7 @@ template Post Type: post, page, product
                         <p><strong>Titre :</strong> <!-- nouveau champ-->
                             <?php echo get_field('titre'); ?> <!-- Affiche le champ "reference" du CPT -->
                         </p>
-                        <p><strong>Descrition :</strong>
+                        <p><strong>Description :</strong>
                             <?php echo get_field('description'); ?> <!-- Affiche le champ "type" du CPT -->
                         </p>
 
